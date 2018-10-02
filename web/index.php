@@ -29,6 +29,11 @@
   <div class="box" style="background-color:#ddd">
 	<h1>Time left in my job</h1>
     <p>Time left to work...</p>
+	<?php
+$d1=strtotime("October 19");
+$d2=ceil(($d1-time())/60/60/24);
+echo "There are " . $d2 ." days until liberation.";
+?>
   </div>
 
 </div>
