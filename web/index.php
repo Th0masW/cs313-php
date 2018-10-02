@@ -6,11 +6,12 @@
   <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 </head>
 <body>
-
+<nav id="css_menu">
 <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="assignments.html">Assignments</a></li>
 </ul>
+</nav>
 
 
 
