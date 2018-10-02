@@ -3,7 +3,7 @@
 <head>
 <title>Introduction</title>
 
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="CSS/styles.css">
 </head>
 <body>
 
