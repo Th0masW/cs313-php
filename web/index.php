@@ -14,7 +14,7 @@
 </nav>
 
 
-<div class="clearfix">
+<div class="flex-container">
   <div class="box" style="background-color:#bbb">
     <h1>About Me</h1
 <p>My name is Thomas. I actually do like to play Pokémon. I bought Diamond and Pearl for the DS when they first came out. I bought them for myself and my 2 sons. We played it a lot, hundreds of hours. On occasion my wife would let them buy packs of Pokémon cards at Walmart. The banked quite a collection of cards over time. About this time my wife hurt her neck and had to sleep in a recliner for a few months.</p>
