@@ -32,7 +32,7 @@ catch (PDOException $ex)
   die();
 }
 
-foreach ($db->query('SELECT * FROM state WHERE State='FL'') as $row)
+foreach ($db->query('SELECT * FROM state') as $row)
 {
   echo 'State Name: ' . $row['state'];
 
