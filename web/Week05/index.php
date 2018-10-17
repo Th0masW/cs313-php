@@ -32,7 +32,7 @@ catch (PDOException $ex)
   die();
 }
 
-foreach ($db->query('SELECT * FROM state WHERE STATE like 'I%'') as $row)
+foreach ($db->query('SELECT * FROM state WHERE STATE like "I%"') as $row)
 {
   echo 'State Name: ' . $row['state'];
 
