@@ -9,7 +9,7 @@
  
   </head>
 <body>
-
+<?php 
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -38,6 +38,8 @@ foreach ($db->query('SELECT state FROM state') as $row)
 
   echo '<br/>';
 }
+?>
+
 
 </body>
 </html>
