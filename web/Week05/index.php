@@ -57,7 +57,7 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
 <?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>
             <li>
                 <strong>
-                    echo($row["state"]); ?>
+                    <?php echo($row["state"]); ?>
                 </strong>
                 
             </li>
