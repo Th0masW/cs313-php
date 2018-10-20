@@ -54,7 +54,14 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
         <?php endforeach; ?>
         </ul>
         <hr />
-
+<?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>
+            <li>
+                <strong>
+                    echo($row["state"]); ?>
+                </strong>
+                
+            </li>
+        <?php endforeach; ?>
 		
 		<h1>Annoying States</h1>
 		<form name="form1" id="form1" action="" method="post">
@@ -62,7 +69,7 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
 		<option value="">--- Select ---</option>
 		<?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>                        
                     <?php echo($row["state"]); ?>
-                    <?php echo($row["gender"]); ?>            
+                             
         <?php endforeach; ?>
 		</option>
 		</select>
