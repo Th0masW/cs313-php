@@ -46,8 +46,8 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
         <?php foreach ($db->query("SELECT * FROM public.annoying_people") as $row): ?>
             <li>
                 <strong>
-                    <?php echo($row["Time"]); ?>
-                    <?php echo($row["Gender"]); ?>:<?php echo($row["State"]); ?>
+                    <?php echo($row["time"]); ?>
+                    <?php echo($row["gender"]); ?>:<?php echo($row["state"]); ?>
                 </strong>
                 
             </li>
