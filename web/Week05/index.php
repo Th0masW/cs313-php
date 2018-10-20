@@ -41,5 +41,19 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
 ?>
 
 
+<h1>Scripture Resources</h1>
+        <ul>
+        <?php foreach ($db->query("SELECT * FROM public.annoying_people") as $row): ?>
+            <li>
+                <strong>
+                    <?php echo($row["Time"]); ?>
+                    <?php echo($row["Gender"]); ?>:<?php echo($row["State"]); ?>
+                </strong>
+                
+            </li>
+        <?php endforeach; ?>
+        </ul>
+        <hr />
+
 </body>
 </html>
