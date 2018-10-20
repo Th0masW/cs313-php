@@ -67,6 +67,7 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
 		<form name="form1" id="form1" action="" method="post">
 		<select name="selectid" Id="select">
 		<option value="">--- Select ---</option>
+		<option>
 		<?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>                        
                     <?php echo($row["state"]); ?>
          		</option>                    
