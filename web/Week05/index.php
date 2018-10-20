@@ -69,9 +69,9 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
 		<option value="">--- Select ---</option>
 		<?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>                        
                     <?php echo($row["state"]); ?>
-                             
+         		</option>                    
         <?php endforeach; ?>
-		</option>
+
 		</select>
 		</form>
 		
