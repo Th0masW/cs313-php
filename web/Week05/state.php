@@ -29,14 +29,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="index.php">Home
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="busy.php">Busy Times</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="state.php">State Tracker
 			  <span class="sr-only">(current)</span></a>
             </li>
@@ -136,11 +136,13 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
 
 <h1>Scripture Resources</h1>
         <ul>
-        <?php foreach ($db->query("SELECT * FROM public.annoying_people") as $row): ?>
+        <?php foreach ($db->query("select state.state,count(*) 
+						from state inner join annoying_people 
+						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
             <li>
                 <strong>
-                    <?php echo($row["time"]); ?>
-                    <?php echo($row["gender"]); ?>:<?php echo($row["state"]); ?>
+                    <?php echo($row["state"]); ?>  
+                    <?php echo($row["count"]); ?>
                 </strong>
                 
             </li>
