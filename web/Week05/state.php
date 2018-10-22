@@ -93,19 +93,7 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
               </h4>
               <p class="card-text">
 			  
-			          <?php foreach ($db->query("select state.state,count(*) 
-						from state inner join annoying_people 
-						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
-            <li>
-                <strong>
-                    <?php echo($row["state"]); ?>  
-                    <?php echo($row["count"]); ?>
-                </strong>
-                
-            </li>
-        <?php endforeach; ?>
-        </ul>
-			  <table><tr><td><strong>STATE</strong></td><td><strong>COUNT</strong></td></tr>
+			  <table><tr><td><strong>STATE   </strong></td><td><strong>COUNT   </strong></td></tr>
 			   <?php foreach ($db->query("select state.state,count(*) 
 						from state inner join annoying_people 
 						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
