@@ -74,7 +74,7 @@ catch (PDOException $ex)
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Tracker
+      <h1 class="my-4">State Tracker
         <small>...</small>
       </h1>
 
