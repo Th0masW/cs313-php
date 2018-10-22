@@ -49,7 +49,7 @@
     <div class="container">
 
       <!-- Page Heading -->
-      <h1 class="my-4">Tracker
+      <h1 class="my-4">Busy Time Tracker
         <small>...</small>
       </h1>
 
@@ -58,9 +58,9 @@
           <div class="card h-100">
                         <div class="card-body">
               <h4 class="card-title">
-                Break Times
+                ..
               </h4>
-              <p class="card-text">Placeholder for break and lunch times.</p>
+              <p class="card-text">Work in progress.</p>
             </div>
           </div>
         </div>
@@ -69,9 +69,9 @@
             
             <div class="card-body">
               <h4 class="card-title">
-                Busy Times
+                ...
               </h4>
-              <p class="card-text">Place holder for busy times.</p>
+              <p class="card-text">Work in progress.</p>
             </div>
           </div>
         </div>
@@ -79,9 +79,9 @@
           <div class="card h-100">
              <div class="card-body">
               <h4 class="card-title">
-                States
+                ...
               </h4>
-              <p class="card-text">Place holder for State tracker</p>
+              <p class="card-text">Work in progress.</p>
             </div>
           </div>
         </div>

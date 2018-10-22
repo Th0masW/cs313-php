@@ -58,9 +58,26 @@
           <div class="card h-100">
                         <div class="card-body">
               <h4 class="card-title">
-                Break Times
+                Break Out by States
               </h4>
-              <p class="card-text">Placeholder for break and lunch times.</p>
+              <p class="card-text">
+			  <table><tr><td><strong>STATE</strong></td><td><strong>Count</strong></td></tr>
+			   <?php foreach ($db->query("select state.state,count(*) 
+						from state inner join annoying_people 
+						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
+            <tr>
+                
+                   <td> <?php echo($row["state"]); ?> </td> 
+                   <td> <?php echo($row["count"]); ?></td>
+                
+                
+            </tr>
+        <?php endforeach; ?>
+       </table>
+			  
+			  
+			  
+			  </p>
             </div>
           </div>
         </div>
