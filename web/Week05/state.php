@@ -61,7 +61,20 @@
                 Break Out by States
               </h4>
               <p class="card-text">
-			  <table><tr><td><strong>STATE</strong></td><td><strong>Count</strong></td></tr>
+			  
+			          <?php foreach ($db->query("select state.state,count(*) 
+						from state inner join annoying_people 
+						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
+            <li>
+                <strong>
+                    <?php echo($row["state"]); ?>  
+                    <?php echo($row["count"]); ?>
+                </strong>
+                
+            </li>
+        <?php endforeach; ?>
+        </ul>
+			  <table><tr><td><strong>STATE</strong></td><td><strong>COUNT</strong></td></tr>
 			   <?php foreach ($db->query("select state.state,count(*) 
 						from state inner join annoying_people 
 						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
