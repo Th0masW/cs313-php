@@ -93,7 +93,7 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
               </h4>
               <p class="card-text">
 			  
-			  <table><tr><td><strong>STATE   </strong></td><td><strong>COUNT   </strong></td></tr>
+			  <table><tr><td><strong>STATE....   </strong></td><td><strong>COUNT   </strong></td></tr>
 			   <?php foreach ($db->query("select state.state,count(*) 
 						from state inner join annoying_people 
 						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
@@ -105,10 +105,8 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
                 
             </tr>
         <?php endforeach; ?>
-       </table>
-			  
-			  
-			  
+       </table>	  
+			  	  
 			  </p>
             </div>
           </div>
@@ -118,9 +116,24 @@ foreach ($db->query("SELECT * FROM public.state WHERE state = 'UT'") as $row)
             
             <div class="card-body">
               <h4 class="card-title">
-                Busy Times
+                Break out by Gender
               </h4>
-              <p class="card-text">Place holder for busy times.</p>
+              <p class="card-text">
+			  
+			  <table><tr><td><strong>Gender....   </strong></td><td><strong>COUNT   </strong></td></tr>
+			   <?php foreach ($db->query(" select gender.gender,count(*) 
+											from gender inner join annoying_people 
+											on gender.id=annoying_people.gender group 
+											by gender.gender order by count desc;") as $row): ?>
+            <tr>
+                
+                   <td> <?php echo($row["gender"]); ?> </td> 
+                   <td> <?php echo($row["count"]); ?></td>
+                
+                
+            </tr>
+        <?php endforeach; ?>
+       </table>	  
             </div>
           </div>
         </div>
