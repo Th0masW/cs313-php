@@ -99,21 +99,13 @@ catch (PDOException $ex)
 			  
 			   <form action="welcome.php" method="post">
 			  How busy is it right now? <br>
-					<select name="HowBusy">
-						<option value="">..Select..</option>
-						<option value="1">Dead</option>
-						<option value="2">Slow</option>
-						<option value="3">Steady</option>
-						<option value="4">Busy</option>
-						<option value="5">B2B</option>
-					</select>
-					<br><br>
+					<br>
 					<select name= "HowBusy">
 					<option value="">..Select..</option>
 					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
 				<option value="<?=$row['id']?>"> <?=$row['busytypes']?><br>
 			<?php endforeach; ?>
-					</select>
+					</select><br>
 			<input type="submit">
 </form>
 			  
