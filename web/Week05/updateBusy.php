@@ -41,13 +41,12 @@ try
 {
 	// Add the Scripture
 	// We do this by preparing the query with placeholder values
-	$query = 'INSERT INTO bizzy(time, busy) VALUES(:time, :busy)';
-	$statement = $db->prepare($query);
+	$query = 'INSERT INTO bizzy(time, busy) VALUES($CurrentTime, $busy)';
 	// Now we bind the values to the placeholders. This does some nice things
 	// including sanitizing the input with regard to sql commands.
-	$statement->bindValue(':time', $CurrentTime);
-	$statement->bindValue(':HowBusy', $busy);
-	$statement->execute();
+	//$statement->bindValue(':time', $CurrentTime);
+	//$statement->bindValue(':HowBusy', $busy);
+	//$statement->execute();
 	// get the new id
 	
 }
