@@ -1,4 +1,28 @@
 <?php session_start();?>
+<?php 
+try
+{
+  $dbUrl = getenv('DATABASE_URL');
+
+  $dbOpts = parse_url($dbUrl);
+
+  $dbHost = $dbOpts["host"];
+  $dbPort = $dbOpts["port"];
+  $dbUser = $dbOpts["user"];
+  $dbPassword = $dbOpts["pass"];
+  $dbName = ltrim($dbOpts["path"],'/');
+
+  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -82,6 +106,24 @@
                 States
               </h4>
               <p class="card-text">Place holder for State tracker</p>
+			  
+			  <form action="welcome.php" method="post">
+			  How busy is it right now? <br>
+					<select name="HowBusy">
+						<option value="">..Select..</option>
+						<option value="1">Dead</option>
+						<option value="2">Slow</option>
+						<option value="3">Steady</option>
+						<option value="4">Busy</option>
+						<option value="5">B2B</option>
+					</select>
+					
+					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
+				<input type="checkbox" name="topics[]" value="<?=$row['id']?>"> <?=$row['BusyTypes']?><br>
+			<?php endforeach; ?>
+
+			<input type="submit">
+</form>
             </div>
           </div>
         </div>

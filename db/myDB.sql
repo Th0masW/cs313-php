@@ -22,7 +22,7 @@ State int REFERENCES state(ID)
 create type busy as enum ('Dead', 'Slow','Steady', 'Busy', 'B2B');
 create table busy_types (
 ID		SERIAL PRIMARY KEY,
-BusyTpes busy
+BusyTypes busy
 );
 
 create table bizzy (
