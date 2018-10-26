@@ -42,8 +42,7 @@ catch (PDOException $ex)
 
 	<script>
 	function updateBusy() {
-		//<?php $currentTime = time(); ?>
-		//<?php $db->query("INSERT INTO bizzy (time,busy) VALUES ('$currentTime',$_POST[HowBusy])"); ?>
+		alert("hot");
 	}
 </script>
  
@@ -103,7 +102,7 @@ catch (PDOException $ex)
               </h4>
               <p class="card-text">Place holder for busy times.</p>
 			  
-			   <form method="post" name="busyForm">
+			   <form method="post" name="stateForm">
 			  How busy is it right now? <br>
 					
 					<select name= "HowBusy">
