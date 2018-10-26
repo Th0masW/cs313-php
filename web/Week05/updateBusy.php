@@ -40,5 +40,10 @@ echo "hiiii";
 echo $CurrentTime;
 echo "    ";
 echo $busy;
+
+$db->query("INSERT INTO bizzy (time, busy) VALUES ('$CurrentTime', $busy)");
+
+
+
 ?> 
 
