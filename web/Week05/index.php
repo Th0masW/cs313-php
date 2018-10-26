@@ -42,7 +42,7 @@ catch (PDOException $ex)
 
 	<script>
 	function updateBusy() {
-		<?php $currentTime = time(); ?>
+		//<?php $currentTime = time(); ?>
 		//<?php $db->query("INSERT INTO bizzy (time,busy) VALUES ('$currentTime',$_POST[HowBusy])"); ?>
 	}
 </script>
