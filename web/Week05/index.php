@@ -111,7 +111,7 @@ catch (PDOException $ex)
 					<option value="2">Slow</option>
 					<option value="3">Steady</option>
 					<option value="4">Busy</option>
-					<option value="5">B2B</option>
+					<option value="5">B2Bwwwwww</option>
 					<br><br>
 			<input type="submit" value="Update">
 </form>
