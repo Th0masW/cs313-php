@@ -32,7 +32,7 @@ catch (PDOException $ex)
 
 ***********************************************************/
 // get the data from the POST
-$busy = $_POST['howBizzy'];
+$busy = $_POST['HowBusy'];
 $CurrentTime = Time();
 
 //require("dbConnect.php");
