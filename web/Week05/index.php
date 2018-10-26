@@ -40,11 +40,7 @@ catch (PDOException $ex)
     <!-- Custom styles for this template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 
-	<script>
-	function updateBusy() {
-		alert("hot");
-	}
-</script>
+
  
   </head>
 <body>
