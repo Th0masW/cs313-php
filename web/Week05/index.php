@@ -102,16 +102,16 @@ catch (PDOException $ex)
               </h4>
               <p class="card-text">Place holder for busy times.</p>
 			  
-			   <form method="post" name="stateForm">
+			   <form action="updateBusy.php" method="post" name="stateForm">
 			  How busy is it right now? <br>
 					
-					<select name= "HowBusy">
+					<select id="howBizzy" name= "HowBusy">
 					<option value="">..Select..</option>
 					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
 				<option value="<?=$row['id']?>"> <?=$row['busytypes']?><br>
 			<?php endforeach; ?>
 					</select><br><br>
-			<input type="submit" onclick="updateBusy();">
+			<input type="submit" value="Update">
 </form>
 			  
             </div>
