@@ -96,6 +96,25 @@ catch (PDOException $ex)
                 Busy Times
               </h4>
               <p class="card-text">Place holder for busy times.</p>
+			  
+			   <form action="welcome.php" method="post">
+			  How busy is it right now? <br>
+					<select name="HowBusy">
+						<option value="">..Select..</option>
+						<option value="1">Dead</option>
+						<option value="2">Slow</option>
+						<option value="3">Steady</option>
+						<option value="4">Busy</option>
+						<option value="5">B2B</option>
+					</select>
+					<br>
+					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
+				<input type="option" name="topics[]" value="<?=$row['id']?>"> <?=$row['BusyTypes']?><br>
+			<?php endforeach; ?>
+
+			<input type="submit">
+</form>
+			  
             </div>
           </div>
         </div>
@@ -107,23 +126,7 @@ catch (PDOException $ex)
               </h4>
               <p class="card-text">Place holder for State tracker</p>
 			  
-			  <form action="welcome.php" method="post">
-			  How busy is it right now? <br>
-					<select name="HowBusy">
-						<option value="">..Select..</option>
-						<option value="1">Dead</option>
-						<option value="2">Slow</option>
-						<option value="3">Steady</option>
-						<option value="4">Busy</option>
-						<option value="5">B2B</option>
-					</select>
-					
-					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
-				<input type="checkbox" name="topics[]" value="<?=$row['id']?>"> <?=$row['BusyTypes']?><br>
-			<?php endforeach; ?>
-
-			<input type="submit">
-</form>
+			 
             </div>
           </div>
         </div>
