@@ -40,6 +40,11 @@ catch (PDOException $ex)
     <!-- Custom styles for this template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 
+	<script>
+	function updateBusy() {
+		alert("hot");
+	}
+</script>
  
   </head>
 <body>
@@ -106,7 +111,7 @@ catch (PDOException $ex)
 				<option value="<?=$row['id']?>"> <?=$row['busytypes']?><br>
 			<?php endforeach; ?>
 					</select><br><br>
-			<input type="submit" onclick="sendScriptures();">
+			<input type="submit" onclick="updateBusy();">
 </form>
 			  
             </div>
