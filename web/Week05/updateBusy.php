@@ -36,5 +36,9 @@ $CurrentTime = Time();
 
 
 echo "hiiii";
+
+echo $CurrentTime;
+echo "    ";
+echo $busy;
 ?> 
 
