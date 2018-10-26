@@ -31,7 +31,7 @@ catch (PDOException $ex)
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+	
 <title>CS 313 Project</title>
 
     <!-- Bootstrap core CSS -->
@@ -40,6 +40,11 @@ catch (PDOException $ex)
     <!-- Custom styles for this template -->
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 
+	<script>
+	function updateBusy() {
+		alert("hot");
+	}
+</script>
  
   </head>
 <body>
@@ -97,16 +102,16 @@ catch (PDOException $ex)
               </h4>
               <p class="card-text">Place holder for busy times.</p>
 			  
-			   <form action="welcome.php" method="post">
+			   <form method="post" name="stateForm>
 			  How busy is it right now? <br>
-					<br>
+					
 					<select name= "HowBusy">
 					<option value="">..Select..</option>
 					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
 				<option value="<?=$row['id']?>"> <?=$row['busytypes']?><br>
 			<?php endforeach; ?>
-					</select><br>
-			<input type="submit">
+					</select><br><br>
+			<input type="submit" onclick="updateBusy();">
 </form>
 			  
             </div>
