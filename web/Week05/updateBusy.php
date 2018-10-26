@@ -24,7 +24,6 @@ catch (PDOException $ex)
 
 ?>
 
-<?php echo $busy; ?>
 
 
 <?php
@@ -37,7 +36,6 @@ catch (PDOException $ex)
 $busy = $_POST['HowBusy'];
 $CurrentTime = Time();
 
-echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;echo $busy ;
 
 //require("dbConnect.php");
 //$db = get_db();
