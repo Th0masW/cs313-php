@@ -107,10 +107,12 @@ catch (PDOException $ex)
 					
 					<select id="howBizzy" name= "HowBusy">
 					<option value="">..Select..</option>
-					<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
-				<option value="<?=$row['id']?>"> <?=$row['busytypes']?><br>
-			<?php endforeach; ?>
-					</select><br><br>
+					<option value="1">Dead</option>
+					<option value="2">Slow</option>
+					<option value="3">Steady</option>
+					<option value="4">Busy</option>
+					<option value="5">B2B</option>
+					<br><br>
 			<input type="submit" value="Update">
 </form>
 			  
