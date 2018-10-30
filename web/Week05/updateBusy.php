@@ -105,7 +105,8 @@ $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
 
 $statement = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-echo $results[BusyTypes];
+echo "array :";
+echo $results[$busy];
 
 ?> 
 	
