@@ -107,7 +107,7 @@ echo "hold value: ";
 echo $hold;
 
 $stmt = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3");
-echo $stmt;
+echo (string)$stmt;
 
 echo ($stmt["BusyTypes"]);;
 
