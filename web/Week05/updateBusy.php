@@ -97,7 +97,7 @@ catch (PDOException $ex)
 // get the data from the POST
 $busy = $_POST['HowBusy'];
 $CurrentTime = date('m/d/Y h:i:s a', time());;
-echo $CurrentTime;
+echo $CurrentTime; 
 echo "    ";
 echo $busy;
 
