@@ -105,41 +105,26 @@ $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
 $hold = $busy;
 echo "hold value: ";
 echo $hold;
-$busy3 = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3");
-$db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3") as $busy2;
-echo $busy2;
+$busy3 = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = '3'");
+$busy2 = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = '3'");
+echo $busy3;
 
 echo ($busy2["BusyTypes"]);;
 
 ?> 
 	
- <?php foreach ($db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3") as $row): ?>
- <?php echo($row["BusyTypes"]); ?>
-  <?php echo($row["ID"]); ?>
-   <?php echo($row["busy_types"]); ?>
-  <?php endforeach; ?>
-
-
-
-
-	
-			  
+  
 			  
 			  </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            
-           
-          </div>
-        </div>
+        
       </div>
       <!-- /.row -->
 
 
-    <!-- Footer -->
+  <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; CS 313 2018</p>
@@ -150,6 +135,6 @@ echo ($busy2["BusyTypes"]);;
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	
-	
-	</body>
+		
+</body>
 </html>
