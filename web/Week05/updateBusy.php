@@ -92,6 +92,9 @@ catch (PDOException $ex)
                 You just updated the database with the following information:
               </h4>
               <p class="card-text">
+			  
+			 <?php $busy2 = ($db->query("SELECT busy_types.$busy FROM busy inner join busy_types on busy.id=bizzy.Busy")?>
+			  
 			  <?php
 
 // get the data from the POST
