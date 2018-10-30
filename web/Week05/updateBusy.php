@@ -110,6 +110,9 @@ $testy = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $hol
 $testy->fetch(PDO::FETCH_ASSOC);
 echo $testy;
 
+$statement = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $hold");
+$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+echo $results;
 
 ?> 
 	
