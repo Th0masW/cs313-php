@@ -96,7 +96,7 @@ catch (PDOException $ex)
 
 // get the data from the POST
 $busy = $_POST['HowBusy'];
-$busy2 = $_POST['busytypes'];
+$busy2 = ($db->query("SELECT busy_types.$busy FROM busy inner join busy_types on busy.id=bizzy.Busy");
 $CurrentTime = date('m/d/Y h:i:s a', time());;
 echo $CurrentTime; 
 echo "    ";
