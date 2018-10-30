@@ -96,11 +96,9 @@ catch (PDOException $ex)
 
 // get the data from the POST
 $busy = $_POST['HowBusy'];
-
 $CurrentTime = date('m/d/Y h:i:s a', time());;
 echo $CurrentTime; 
 echo "    ";
-echo $busy; <br>
 echo $busy;
 
 $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
