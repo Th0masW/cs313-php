@@ -100,8 +100,7 @@ catch (PDOException $ex)
               <h4 class="card-title">
                 Busy Times
               </h4>
-              <p class="card-text">Place holder for busy times.</p>
-			  <?php echo $busy?>
+              <?php echo $busy?>
 			   <form action="updateBusy.php" method="post" name="stateForm">
 			  How busy is it right now? <br>
 					
