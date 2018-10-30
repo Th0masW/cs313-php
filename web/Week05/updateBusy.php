@@ -104,7 +104,7 @@ echo $busy;
 $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
 $hold = $busy;
 echo "hold value: ";
-
+echo $hold;
 $busy2 = $db->query("SELECT busy_types.$hold FROM busy inner join busy_types on busy.id=bizzy.Busy");
 echo $busy2;
 
