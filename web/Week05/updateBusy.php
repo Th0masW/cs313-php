@@ -102,13 +102,10 @@ echo "    ";
 echo $busy;
 
 $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
-$hold = $busy;
-echo "hold value: ";
-echo $hold;
 
 $statement = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-echo $results;
+echo $results[BusyTypes];
 
 ?> 
 	
