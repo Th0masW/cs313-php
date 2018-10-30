@@ -106,11 +106,10 @@ $hold = $busy;
 echo "hold value: ";
 echo $hold;
 
-$testy = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3");
+$testy = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $hold");
 $please =(string)$testy;
 echo $please;
 
-echo ($stmt["BusyTypes"]);;
 
 ?> 
 	
