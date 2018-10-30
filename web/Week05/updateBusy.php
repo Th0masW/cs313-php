@@ -106,7 +106,7 @@ $hold = $busy;
 echo "hold value: ";
 echo $hold;
 
-$statement = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3");
+$statement = $db->query('SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $hold');
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 echo $results;
 
