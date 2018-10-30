@@ -112,9 +112,7 @@ echo ($busy2["BusyTypes"]);;
 
 ?> 
 	
-				   <?php foreach ($db->query("select state.state,count(*) 
-						from state inner join annoying_people 
-						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
+ <?php foreach ($db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3") as $row): ?>
 
 
 
