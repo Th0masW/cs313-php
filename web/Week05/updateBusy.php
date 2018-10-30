@@ -114,6 +114,8 @@ echo ($busy2["BusyTypes"]);;
 	
  <?php foreach ($db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 3") as $row): ?>
  <?php echo($row["BusyTypes"]); ?>
+  <?php echo($row["ID"]); ?>
+   <?php echo($row["busy_types"]); ?>
   <?php endforeach; ?>
 
 
