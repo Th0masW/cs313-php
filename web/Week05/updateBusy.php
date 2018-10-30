@@ -93,7 +93,7 @@ catch (PDOException $ex)
               </h4>
               <p class="card-text">
 			  
-			 <?php $busy2 = ($db->query("SELECT busy_types.$busy FROM busy inner join busy_types on busy.id=bizzy.Busy")?>
+			 <?php $busy2 = ($db->query("SELECT busy_types.$busy FROM busy inner join busy_types on busy.id=bizzy.Busy"):?>
 			  
 			  <?php
 
