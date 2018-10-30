@@ -112,11 +112,7 @@ echo ($busy2["BusyTypes"]);;
 
 ?> 
 	
-<?php 
-foreach ($db->query("select state.state,count(*) 
-						from state inner join annoying_people 
-						on state.id=annoying_people.state group by state.state order by count desc;") as $row):
-						?>
+
 
 
 
@@ -148,3 +144,6 @@ foreach ($db->query("select state.state,count(*)
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>	
+	
+	</body>
+</html>
