@@ -110,9 +110,9 @@ $statement->execute();
 echo "  Busy Code: ";
 echo $results;
 
-echo "$results dump  "; 
+echo "            results dump  "; 
 var_dump($results); 
-echo "$statement dump  "; 
+echo "     statement dump  "; 
 var_dump($statement); 
 
 ?> 
