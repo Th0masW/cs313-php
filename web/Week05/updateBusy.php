@@ -104,11 +104,11 @@ echo $busy;
 $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
 
 $statement = $db->query("SELECT busy_types.BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
-
-$results = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->execute();
+$results = $statement->fetch(PDO::FETCH_ASSOC);
+
 echo "  Busy Code: ";
-echo $results[$busy];
+echo $results["busytypes"];
 
 echo "            results dump  "; 
 var_dump($results); 
