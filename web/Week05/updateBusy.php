@@ -110,6 +110,7 @@ echo "AArray :";
 echo $results["ID"];
 echo "statement: ";
 echo $statement;
+var_dump;
 
 ?> 
 	
