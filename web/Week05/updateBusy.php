@@ -113,9 +113,7 @@ echo $statement;
 var_dump;
 
 ?> 
-				   <?php foreach ($db->query("select state.state,count(*) 
-						from state inner join annoying_people 
-						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
+
   
 			  
 			  </p>
