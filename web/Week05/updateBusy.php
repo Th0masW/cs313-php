@@ -107,7 +107,7 @@ $statement = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = 
 $statement->execute();
 $results = $statement->fetch(PDO::FETCH_ASSOC);
 echo "AArray :";
-echo $results["ID";
+echo $results["ID"];
 echo "statement: ";
 echo $statement;
 
