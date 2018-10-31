@@ -103,7 +103,7 @@ echo $busy;
 
 $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
 
-$statement = $db->query("SELECT BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
+$statement = $db->query("SELECT busy_types.BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
 $statement->execute();
 $results = $statement->fetch(PDO::FETCH_ASSOC);
 echo "AArray :";
@@ -113,7 +113,9 @@ echo $statement;
 var_dump;
 
 ?> 
-	
+				   <?php foreach ($db->query("select state.state,count(*) 
+						from state inner join annoying_people 
+						on state.id=annoying_people.state group by state.state order by count desc;") as $row): ?>
   
 			  
 			  </p>
