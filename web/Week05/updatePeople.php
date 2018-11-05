@@ -24,6 +24,8 @@ catch (PDOException $ex)
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,9 +43,7 @@ catch (PDOException $ex)
     <link href="css/3-col-portfolio.css" rel="stylesheet">
 
 	<script>
-	function updateBusy() {
-		alert("hot");
-	}
+
 </script>
  
   </head>
@@ -59,7 +59,7 @@ catch (PDOException $ex)
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -87,68 +87,46 @@ catch (PDOException $ex)
           <div class="card h-100">
                         <div class="card-body">
               <h4 class="card-title">
-                Break Times
+                You just updated the database with the following information:
               </h4>
-              <p class="card-text">Placeholder for break and lunch times.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            
-            <div class="card-body">
-              <h4 class="card-title">
-                Busy Times
-              </h4>
-              <?php echo $busy?>
-			   <form action="updateBusy.php" method="post" name="busyForm">
-			  How busy is it right now? <br>
-					
-					<select id="howBizzy" name= "HowBusy">
-					<option value="">..Select..</option>
-				<?php foreach ($db->query("SELECT * FROM public.busy_types") as $row): ?>
-				<option value="<?=$row['id']?>"> <?=$row['busytypes']?><br>
-			<?php endforeach; ?>
-					</select>
-					<br><br>
-			<input type="submit" value="Update">
-</form>
+              <p class="card-text">
+			  <?php
+
+// get the data from the POST
+//$busy = $_POST['stateForm'];
+$gender = $_POST['AnnoyingPeople'];
+$state = $_POST['SelectState'];
+$CurrentTime = date('m/d/Y h:i:s a', time());;
+echo $CurrentTime; 
+echo "    ";
+
+//$db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
+$db->query("INSERT INTO annoying_people (time, gender,state) VALUES (current_timestamp, $gender, $state)");
+
+$statement = $db->query("SELECT busy_types.BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
+$statement->execute();
+$results = $statement->fetch(PDO::FETCH_ASSOC);
+?><strong><br>
+<?php
+echo "  Busy Code: "; ?></strong>
+<?php
+echo $results["busytypes"];?>
+
+
+ 
+
+  
 			  
+			  </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-             <div class="card-body">
-              <h4 class="card-title">
-                Annoying States
-              </h4>
-			  <form action="updatePeople.php" method="post" name="stateForm">
-              <p class="card-text">Gender:<br>
-			  <select id="Annoying" name= "AnnoyingPeople">
-			  <option value="">..Select..</option>
-			  <?php foreach ($db->query("SELECT * FROM public.gender") as $row): ?>
-				<option value="<?=$row['id']?>"> <?=$row['gender']?><br>
-			<?php endforeach; ?><br>
-			</select>
-			Select State:<br>
-			<select id="States" name= "SelectState">
-			  <option value="">..Select..</option>
-			  <?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>
-				<option value="<?=$row['id']?>"> <?=$row['state']?><br>
-				<?php endforeach; ?><br>
-				</select><br>
-			<input type="submit" value="Update">
-			   </p>
-			  </form>
-            </div>
-          </div>
-        </div>
+        
       </div>
       <!-- /.row -->
 
 
-    <!-- Footer -->
+  <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; CS 313 2018</p>
