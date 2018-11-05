@@ -1,4 +1,4 @@
-
+<?php
 
 function get_db() {
 	
@@ -28,3 +28,5 @@ catch (PDOException $ex)
 	
 	
 }
+
+?>
