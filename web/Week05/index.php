@@ -137,7 +137,7 @@ catch (PDOException $ex)
 			  <?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>
 				<option value="<?=$row['id']?>"> <?=$row['state']?><br>
 				<?php endforeach; ?><br>
-				</select><br>
+				</select><br><br>
 			<input type="submit" value="Update">
 			   </p>
 			  </form>
