@@ -100,17 +100,17 @@ $CurrentTime = date('m/d/Y h:i:s a', time());;
 echo $CurrentTime; 
 echo "    ";
 
-//$db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
+//Inser data into DB
 $db->query("INSERT INTO annoying_people (time, gender,state) VALUES (current_timestamp, $gender, $state)");
-
-//$statement = $db->query("SELECT busy_types.BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
-//$statement->execute();
-//$results = $statement->fetch(PDO::FETCH_ASSOC);
+//display data
+$statement = $db->query("SELECT gender.Gender FROM gender WHERE gender.ID = $gender");
+$statement->execute();
+$gender_results = $statement->fetch(PDO::FETCH_ASSOC);
 ?><strong><br>
 <?php
-echo "  Busy Code: "; ?></strong>
+echo "Gender: "; ?></strong>
 <?php
-//echo $results["busytypes"];?>  
+echo $gender_results["gender"];?>  
 			  </p>
             </div>
           </div>
