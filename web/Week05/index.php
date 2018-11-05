@@ -130,7 +130,7 @@ catch (PDOException $ex)
 			  <?php foreach ($db->query("SELECT * FROM public.gender") as $row): ?>
 				<option value="<?=$row['id']?>"> <?=$row['gender']?><br>
 			<?php endforeach; ?><br>
-			</select>
+			</select><br>
 			Select State:<br>
 			<select id="States" name= "SelectState">
 			  <option value="">..Select..</option>
