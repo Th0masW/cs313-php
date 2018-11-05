@@ -101,7 +101,7 @@ catch (PDOException $ex)
                 Busy Times
               </h4>
               <?php echo $busy?>
-			   <form action="updateBusy.php" method="post" name="stateForm">
+			   <form action="updateBusy.php" method="post" name="busyForm">
 			  How busy is it right now? <br>
 					
 					<select id="howBizzy" name= "HowBusy">
@@ -121,11 +121,24 @@ catch (PDOException $ex)
           <div class="card h-100">
              <div class="card-body">
               <h4 class="card-title">
-                States
+                Annoying States
               </h4>
-              <p class="card-text">Place holder for State tracker</p>
-			  
-			 
+			  <form action="updatePeople.php" method="post" name="stateForm">
+              <p class="card-text">Gender<br>
+			  <select id="Annoying" name= "AnnoyingPeople">
+			  <option value="">..Select..</option>
+			  <?php foreach ($db->query("SELECT * FROM public.gender") as $row): ?>
+				<option value="<?=$row['id']?>"> <?=$row['gender']?><br>
+			<?php endforeach; ?><br>
+			Select State:<br>
+			<select id="States" name= "SelectState">
+			  <option value="">..Select..</option>
+			  <?php foreach ($db->query("SELECT * FROM public.state") as $row): ?>
+				<option value="<?=$row['id']?>"> <?=$row['state']?><br>
+				<?php endforeach; ?><br>
+			<input type="submit" value="Update">
+			   </p>
+			  </form>
             </div>
           </div>
         </div>
