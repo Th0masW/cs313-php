@@ -1,7 +1,26 @@
 <?php session_start();?>
 <?php 
-	require("dbConnect.php");
-	$db = get_db();
+try
+{
+  $dbUrl = getenv('DATABASE_URL');
+
+  $dbOpts = parse_url($dbUrl);
+
+  $dbHost = $dbOpts["host"];
+  $dbPort = $dbOpts["port"];
+  $dbUser = $dbOpts["user"];
+  $dbPassword = $dbOpts["pass"];
+  $dbName = ltrim($dbOpts["path"],'/');
+
+  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+  $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+  echo 'Error!: ' . $ex->getMessage();
+  die();
+}
 
 ?>
 
@@ -80,21 +99,17 @@ $busy = $_POST['HowBusy'];
 $CurrentTime = date('m/d/Y h:i:s a', time());;
 echo $CurrentTime; 
 echo "    ";
-echo $busy;
+
 
 $db->query("INSERT INTO bizzy (time, busy) VALUES (current_timestamp, $busy)");
 
 $statement = $db->query("SELECT busy_types.BusyTypes FROM busy_types WHERE busy_types.ID = $busy");
 $statement->execute();
 $results = $statement->fetch(PDO::FETCH_ASSOC);
-
-echo "  Busy Code: ";
+<strong>
+echo "  Busy Code: ";</strong>
 echo $results["busytypes"];
 
-echo "            results dump  "; 
-var_dump($results); 
-echo "     statement dump  "; 
-var_dump($statement); 
 
 ?> 
 
