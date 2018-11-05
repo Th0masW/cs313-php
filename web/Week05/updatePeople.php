@@ -113,7 +113,7 @@ echo "Gender: "; ?></strong>
 echo $gender_results["gender"];?>  <br>
 <strong>State:</strong>
 <?php
-
+echo "STATE::::";echo $state;
 $statement = $db->query("SELECT state.STATE FROM state WHERE state.ID = $state");
 $statement->execute();
 $gender_results = $statement->fetch(PDO::FETCH_ASSOC);
